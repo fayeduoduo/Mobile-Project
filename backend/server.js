@@ -55,7 +55,7 @@ app.use('/uploads', express.static(path.join(__dirname, '/uploads')))
 
 //get frontend static file, then can operate external website
 if (process.env.NODE_ENV == 'production') {
-    app.use(express.static(path.join(__dirname, '/frontend/build')))
+    app.use(express.static(path.join(__dirname, '/app/frontend/build')))
     //use get method('*') => match any route path can get response
     app.get('*', (req, res) => { 
         res.sendFile(path.resolve(__dirname, "app","frontend","build", "index.html"))
